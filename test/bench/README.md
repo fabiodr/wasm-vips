@@ -36,7 +36,7 @@ images. For PNG images a zlib compression level of 6 is used.
 | squoosh-cli        | JPEG   | file   | file   |    1.50 |      1.5 |
 | squoosh-lib        | JPEG   | buffer | buffer |    2.49 |      2.5 |
 | mapnik             | JPEG   | buffer | buffer |    4.20 |      4.2 |
-| wasm-vips          | JPEG   | buffer | buffer |    6.23 |      6.3 |
+| wasm-vips          | JPEG   | buffer | buffer |    9.99 |     10.1 |
 | imagemagick        | JPEG   | file   | file   |   12.18 |     12.3 |
 | gm                 | JPEG   | file   | file   |   12.88 |     13.0 |
 | sharp (w/o liborc) | JPEG   | stream | stream |   38.29 |     38.7 |
@@ -47,7 +47,7 @@ images. For PNG images a zlib compression level of 6 is used.
 | sharp              | JPEG   | buffer | buffer |   43.38 |     43.8 |
 |                    |        |        |        |         |          |
 | jimp               | PNG    | buffer | buffer |    5.43 |      1.0 |
-| wasm-vips          | PNG    | buffer | buffer |    5.61 |      1.0 |
+| wasm-vips          | PNG    | buffer | buffer |    5.86 |      1.1 |
 | mapnik             | PNG    | buffer | buffer |    6.76 |      1.2 |
 | gm                 | PNG    | file   | file   |    8.94 |      1.6 |
 | imagemagick        | PNG    | file   | file   |    9.15 |      1.7 |

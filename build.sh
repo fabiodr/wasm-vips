@@ -335,12 +335,16 @@ test -f "$TARGET/lib/pkgconfig/vips.pc" || (
   patch -p1 <$SOURCE_DIR/build/patches/vips-remove-orc.patch
   patch -p1 <$SOURCE_DIR/build/patches/vips-1492-emscripten.patch
   #patch -p1 <$SOURCE_DIR/build/patches/vips-1492-profiler.patch
+  # TODO(kleisauke): Discuss this patch upstream
+  patch -p1 <$SOURCE_DIR/build/patches/vips-simd.patch
+  # Prepend `-msimd128` to SSE flags, see: https://github.com/emscripten-core/emscripten/issues/12714
+  sed -i 's/-msse/-msimd128 &/g' configure.ac
   emconfigure ./autogen.sh --host=$CHOST --prefix=$TARGET --enable-static --disable-shared --disable-dependency-tracking \
     --disable-debug --disable-introspection --disable-deprecated --disable-modules --with-radiance --with-analyze --with-ppm \
     --with-imagequant --with-nsgif --with-cgif --with-lcms --with-zlib --with-libexif --with-jpeg --with-libspng --with-png \
     --with-tiff --with-libwebp --without-fftw --without-pangocairo --without-fontconfig --without-gsf --without-heif \
     --without-pdfium --without-poppler --without-rsvg --without-OpenEXR --without-libjxl --without-libopenjp2 --without-openslide \
-    --without-matio --without-nifti --without-cfitsio --without-magick
+    --without-matio --without-nifti --without-cfitsio --without-magick --disable-avx2 ${DISABLE_SIMD:+--disable-sse4.1}
   make -C 'libvips' install
   make install-pkgconfigDATA
 )
