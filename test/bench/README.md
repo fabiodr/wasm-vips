@@ -47,7 +47,7 @@ images. For PNG images a zlib compression level of 6 is used.
 | sharp              | JPEG   | buffer | buffer |   43.38 |     43.8 |
 |                    |        |        |        |         |          |
 | jimp               | PNG    | buffer | buffer |    5.43 |      1.0 |
-| wasm-vips          | PNG    | buffer | buffer |    5.61 |      1.0 |
+| wasm-vips          | PNG    | buffer | buffer |    5.94 |      1.1 |
 | mapnik             | PNG    | buffer | buffer |    6.76 |      1.2 |
 | gm                 | PNG    | file   | file   |    8.94 |      1.6 |
 | imagemagick        | PNG    | file   | file   |    9.15 |      1.7 |
